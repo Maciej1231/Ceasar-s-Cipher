@@ -1,5 +1,7 @@
 from tkinter import *
 
+#creating tkinter box with labels and buttons
+
 root = Tk()
 root.title('Raytheon Cyber Academy     Maciej Kowalski')
 root.geometry("600x400")
@@ -27,12 +29,14 @@ shift_label.grid(row=1,column=0)
 shift_entry.grid(row=1,column=1)
 
 
-
+#clear output and input function
 def myDelete():
     my_label.destroy()
     shift_entry.delete(0,END)
     enter_text_entry.delete(0,END)
-
+    
+    
+#encryption function
 def encrypt():
     new_text = enter_text_entry.get()
     cipher =""
@@ -58,9 +62,11 @@ def encrypt():
 my_label = Label(root)
 my_label.destroy()
 
+# encrypt button 
 my_button = Button(my_label_frame, text="  Encrypt  ",fg="red", command=encrypt)
 my_button.pack(pady=20)    
 
+# clear button
 delete_button =Button(my_label_frame, text= "    Clear    ", command=myDelete)
 delete_button.pack(pady=10,)
 
